@@ -50,12 +50,6 @@ def denemek_icin(alicilar):
         with open('exceptions.txt', 'a', encoding='utf-8') as exception:
             exception.write(f"\n**({datetime.datetime.now().strftime('%d/%m/%Y, %H:%M:%S')}) - dispatch_rider function - ({err})\n")
 
-    # print(("Https://Www.Euronews.Com/2020/12/04/Erdogan-Says-He-Hopes-France-Gets-Rid-Of-Emmanuel-Macron-As-Soon-As-Possible").lower())
-
-
-
-# denemek_icin("ben.txt")
-# denemek_icin("mail_receipents.txt")
 
 
 def html_denemek_icin(alicilar):
@@ -66,12 +60,6 @@ def html_denemek_icin(alicilar):
         with open('exceptions.txt', 'a', encoding='utf-8') as exception:
             exception.write(f"\n**({datetime.datetime.now().strftime('%d/%m/%Y, %H:%M:%S')}) - dispatch_rider_html function - ({err})\n")
 
-
-# html_denemek_icin("ben.txt")
-
-# html_denemek_icin("mail_receipents.txt")  # sending the results.txt to mail_receipents.txt in html format
-
-# print(read_content("results.txt"))
 
 
 def testing_html_template(alicilar="ben.txt"):
