@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="tr-TR">
+    <head>
+
+        <meta http-equiv="content-type" content="text/html charset=UTF-8" />
+		<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0" />
+		
+		<style>
+			body {
+				background-color: whitesmoke;
+			}
+			h4 {
+				border: 0.5px solid tomato;
+				border-radius:5px;
+			}
+			.footer {
+				font-weight:bold;
+				border:0.5px solid lightblue;
+				border-radius:5px;
+				box-shadow:5px 5px grey;
+				text-align:center;
+			}
+			.parts {
+				margin: 8px;
+				border:0.5px solid lightblue;
+				border-radius:5px;
+				background-color: white;
+			}
+			.counter {
+				font-weight: bold;
+				color: tomato;
+			}
+			.title {
+				font-weight: bold;
+			}
+		</style>
+
+    </head>
+    <body>
+
+        <div>
+			<h3>Merhabalar <u> ${PERSON_NAME}</u>,</h3>
+        </div>
+		<div>
+			Sizin için güncel arama sonuçlarımız aşağıda yer almaktadır;
+        </div>
+		<hr/>
+		<div>
+			${MAIL_CONTENT}
+        </div>
+		<hr/>
+    </body>
+    <footer>
+        <div>
+			Saygılarımızla.
+			<p class="footer">
+			ULAK - NEWS  <br />
+			B A C K E N D
+			</p>
+			<p>
+				<i>
+					NOTE : This email was sent via software developed by istiklal GÜNEŞ.
+				</i>
+			</p>
+        </div>
+    </footer>
+
+</html>
