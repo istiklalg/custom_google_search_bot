@@ -11,9 +11,6 @@ from email.mime.text import MIMEText
 
 from passcodes import EMAIL_HOST, EMAIL_PORT, EMAIL_HOST_USER, EMAIL_HOST_PASSWORD
 
-# Function to read the contacts from a given contact file and return a
-# list of names and email addresses
-
 def get_contacts(filename):
     """
     Return two lists names, emails containing names and email addresses
@@ -73,37 +70,23 @@ def despatch_rider(
     
     s = connect_email_account(_host, _port, _address, _password)
 
-    # For each contact, send the email:
     for name, email in zip(names, emails):
-        msg = MIMEMultipart()       # create a message
+        msg = MIMEMultipart()
 
-        # add in the actual person name to the message template
         message = message_template.substitute(PERSON_NAME=name.title(), MAIL_CONTENT=content.title().lower())
 
-
-        # Prints out the message body for our sake
-        # print(message)
-
-        # setup the parameters of the message
         msg['From']=_address
         msg['To']=email
         msg['Subject']="Today's search results..."
-        
-        # add in the message body
+
         msg.attach(MIMEText(message, 'plain'))
-        
-        # send the message via the server set up earlier.
+
         s.send_message(msg)
-        # del msg
-        
-    # Terminate the SMTP session and close the connection
+
     s.quit()
     print("Emails sent successfully...")
     with open('exceptions.txt', 'a', encoding='utf-8') as exception:
         exception.write(f"\n** Emails sent successfully by dispatch_rider ...\n")
-
-
-# despatch_rider(_content_file="keywords.txt")
 
 
 def despatch_rider_HTML(
@@ -127,28 +110,18 @@ def despatch_rider_HTML(
 
     # For each contact, send the email:
     for name, email in zip(names, emails):
-        msg = MIMEMultipart()       # create a message
+        msg = MIMEMultipart()
 
-        # add in the actual person name to the message template
         message = message_template.substitute(PERSON_NAME=name.title(), MAIL_CONTENT=content)
 
-
-        # Prints out the message body for our sake
-        # print(message)
-
-        # setup the parameters of the message
         msg['From']=_address
         msg['To']=email
         msg['Subject']="Today's search results..."
         
-        # add in the message body
         msg.attach(MIMEText(message, 'html'))
-        
-        # send the message via the server set up earlier.
+
         s.send_message(msg)
-        # del msg
-        
-    # Terminate the SMTP session and close the connection
+
     s.quit()
     print("Emails sent successfully in html format...")
     with open('exceptions.txt', 'a', encoding='utf-8') as exception:
