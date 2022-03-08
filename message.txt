@@ -1,0 +1,11 @@
+Merhabalar ${PERSON_NAME},
+
+Sizin için güncel arama sonuçlarımız aşağıda yer almaktadır;
+
+    ${MAIL_CONTENT}
+
+
+Saygılarımızla.
+ULAK NEWS EKİBİ
+
+NOTE : This email was sent via software developed by istiklal GÜNEŞ.
