@@ -94,24 +94,17 @@ def mailing_test_HTML(
         msg.attach(MIMEText(message, 'html'))
 
         # to add an attachment is just add a MIMEBase object to read a picture locally.
-        with open('C:/Users/user/Desktop/ULAK/static/img/LOGOO_sm.jpg', 'rb') as f:  
-            # add image in mail as attachment
+        with open('C:/path/to/project/img/LOGOO_sm.jpg', 'rb') as f:  
             mime = MIMEBase('image', 'jpg', filename='LOGOO_sm.jpg')
-            # add required header data:
             mime.add_header('Content-Disposition', 'attachment', filename='LOGOO_sm.jpg')
             mime.add_header('X-Attachment-Id', '0')
             mime.add_header('Content-ID', '<0>')
-            # read attachment file content into the MIMEBase object
             mime.set_payload(f.read())
-            # encode with base64
             encoders.encode_base64(mime)
-            # add MIMEBase object to MIMEMultipart object
             msg.attach(mime)
-        
-        # send the message via the server set up earlier.
+
         s.send_message(msg)
         
-    # Terminate the SMTP session and close the connection
     s.quit()
     print("Email sent successfully in html format with picture...")
     with open('exceptions.txt', 'a', encoding='utf-8') as exception:
