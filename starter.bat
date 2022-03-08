@@ -1,2 +1,2 @@
 @echo off
-START /WAIT c:/Users/user/Desktop/ULAK/venvulak/Scripts/python.exe c:/Users/user/Desktop/ULAK/ulak_root/root_file.py
+START /WAIT c:/path/to/vitual/environment/Scripts/python.exe c:/path/to/project/ulak_root/root_file.py
