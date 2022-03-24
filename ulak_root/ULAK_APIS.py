@@ -10,8 +10,6 @@ class UlakSearchEngine:
         self.search_engine_id = _search_engine_id
 
 
-#s2 = UlakSearchEngine(_api_key, _search_engine_id)
-
 # decorator function for object error handler
 def engine_test(func):
     def inner(*args, **kwargs):
@@ -26,8 +24,4 @@ def engine_test(func):
 @engine_test
 def view(engine, num):
     print(str(engine.search_engine_id)+" "+str(num))
-   
-
-# view(s1, 7645)
-#view(s2, 16352)
-#view("bu NE", 5)
+  
